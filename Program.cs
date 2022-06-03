@@ -10,32 +10,32 @@ namespace NinetiesTV
         {
             List<Show> shows = DataLoader.GetShows();
 
-            Print("All Names", Names(shows));
-            Print("Alphabetical Names", NamesAlphabetically(shows));
-            Print("Ordered by Popularity", ShowsByPopularity(shows));
-            Print("Shows with an '&'", ShowsWithAmpersand(shows));
-            Print("Latest year a show aired", MostRecentYear(shows));
-            Print("Average Rating", AverageRating(shows));
-            Print("Shows only aired in the 90s", OnlyInNineties(shows));
-            Print("Top Three Shows", TopThreeByRating(shows));
-            Print("Shows starting with 'The'", TheShows(shows));
-            Print("All But the Worst", AllButWorst(shows));
-            Print("Shows with Few Episodes", FewEpisodes(shows));
-            Print("Shows Sorted By Duration", ShowsByDuration(shows));
-            Print("Comedies Sorted By Rating", ComediesByRating(shows));
-            Print("More Than One Genre, Sorted by Start", WithMultipleGenresByStartYear(shows));
-            Print("Most Episodes", MostEpisodes(shows));
-            Print("Ended after 2000", EndedFirstAfterTheMillennium(shows));
-            Print("Best Drama", BestDrama(shows));
-            Print("All But Best Drama", AllButBestDrama(shows));
-            Print("Good Crime Shows", GoodCrimeShows(shows));
-            Print("Long-running, Top-rated", FirstLongRunningTopRated(shows));
-            Print("Most Words in Title", WordieastName(shows));
-            Print("All Names", AllNamesWithCommas(shows));
-            Print("All Names with And", AllNamesWithCommasPlsAnd(shows));
-            Print("Genres of 80s Shows", genresOf80sShows(shows));
-            Print("WOW!! Check out all these dang geners!", genersList(shows));
-            Print("woooooooo", numberOfShowsStartedByYear(shows));
+            Print("1. All Names", Names(shows));
+            Print("2. Alphabetical Names", NamesAlphabetically(shows));
+            Print("3. Ordered by Popularity", ShowsByPopularity(shows));
+            Print("4. Shows with an '&'", ShowsWithAmpersand(shows));
+            Print("5. Latest year a show aired", MostRecentYear(shows));
+            Print("6. Average Rating", AverageRating(shows));
+            Print("7. Shows only aired in the 90s", OnlyInNineties(shows));
+            Print("8. Top Three Shows", TopThreeByRating(shows));
+            Print("9. Shows starting with 'The'", TheShows(shows));
+            Print("10. All But the Worst", AllButWorst(shows));
+            Print("11. Shows with Few Episodes", FewEpisodes(shows));
+            Print("12. Shows Sorted By Duration", ShowsByDuration(shows));
+            Print("13. Comedies Sorted By Rating", ComediesByRating(shows));
+            Print("14. More Than One Genre, Sorted by Start", WithMultipleGenresByStartYear(shows));
+            Print("15. Most Episodes", MostEpisodes(shows));
+            Print("16. Ended after 2000", EndedFirstAfterTheMillennium(shows));
+            Print("17. Best Drama", BestDrama(shows));
+            Print("18. All But Best Drama", AllButBestDrama(shows));
+            Print("19. Good Crime Shows", GoodCrimeShows(shows));
+            Print("20. Long-running, Top-rated", FirstLongRunningTopRated(shows));
+            Print("21. Most Words in Title", WordieastName(shows));
+            Print("22. All Names", AllNamesWithCommas(shows));
+            Print("23. All Names with And", AllNamesWithCommasPlsAnd(shows));
+            Print("Bonus 1: Genres of 80s Shows", genresOf80sShows(shows));
+            Print("Bonus 2: WOW!! Check out all these dang geners!", genersList(shows));
+            Print("Bonus 3: woooooooo", numberOfShowsStartedByYear(shows));
         }
 
         /**************************************************************************************************
@@ -103,8 +103,7 @@ namespace NinetiesTV
         // 10. Return all shows except for the lowest rated show.
         static List<Show> AllButWorst(List<Show> shows)
         {
-            List<Show> showsWorstToBest = shows.OrderBy(s => s.ImdbRating).ToList();
-            return showsWorstToBest.Skip(1).ToList();
+            return shows.OrderBy(s => s.ImdbRating).Skip(1).ToList();
         }
 
         // 11. Return the names of the shows that had fewer than 100 episodes.
@@ -135,8 +134,7 @@ namespace NinetiesTV
         // 15. Return the show with the most episodes.
         static Show MostEpisodes(List<Show> shows)
         {
-            List<Show> showsByEpisodeCount = shows.OrderByDescending(s => s.EpisodeCount).ToList();
-            return showsByEpisodeCount[0];
+            return shows.OrderByDescending(s => s.EpisodeCount).First();
         }
 
         // 16. Order the shows by their ending year then return the first 
